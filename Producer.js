@@ -3,7 +3,7 @@ const { Kafka } = require("kafkajs");
 // 1. Initialize Kafka client
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["10.25.233.148:9092"], // Replace with your broker addresses
+  brokers: ["192.168.68.59:9094"],
 });
 
 // 2. Create producer instance
@@ -18,8 +18,7 @@ const runProducer = async () => {
     await producer.send({
       topic: "factory",
       messages: [
-        { value: "sensor reading" },
-        { key: "Sensor1", value: JSON.stringify({ name: "Test", timestamp: Date.now() }) }
+        { value: "texto 123" }
       ],
     });
     
