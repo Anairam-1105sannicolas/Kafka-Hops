@@ -3,7 +3,7 @@ const { Kafka } = require("kafkajs");
 // 1. Initialize Kafka client
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["192.168.68.59:9094"],
+  brokers: ["192.168.68.55:9094"], // ip de la otra compu
 });
 
 // 2. Create producer instance

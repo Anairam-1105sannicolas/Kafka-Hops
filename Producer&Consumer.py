@@ -14,14 +14,16 @@ config_cons = {
     'auto.offset.reset': 'earliest',
 }
 
-config_prod = {
-    'bootstrap.servers': 'localhost:9092',
+
+config_prod = { 
+    'bootstrap.servers': 'localhost:9092',  # ip de la otra compu
     'acks': 'all'
 }
 
-topic = 'factory'
+topic_entrada = 'factory'
+topic_salida = 'factory_response'
 consumer = Consumer(config_cons)
-consumer.subscribe([topic])
+consumer.subscribe([topic_entrada])
 
 producer = Producer(config_prod)
 value = 'sensor reading'
@@ -38,7 +40,7 @@ while True:
         print("Recibed Val", val)
 
         #reenvio
-        producer.produce(topic, val, key, callback=delivery_callbaack)
+        producer.produce(topic_salida, val, key, callback=delivery_callbaack)
         producer.poll(0)
         producer.flush()
 

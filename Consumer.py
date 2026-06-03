@@ -2,14 +2,14 @@ from confluent_kafka import Consumer
 
 
 config = {
-    'bootstrap.servers': '192.168.68.59:9094',
+    'bootstrap.servers': 'localhost:9094',
     'group.id': 'kafka1',
     'auto.offset.reset': 'earliest',
 }
 
 topic = 'factory'
 consumer = Consumer(config)
-consumer.subscribe([topic])
+consumer.subscribe(['factory_response'])
 
 while True:
     msg = consumer.poll(1.0)
