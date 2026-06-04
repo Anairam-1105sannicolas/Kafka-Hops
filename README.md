@@ -50,6 +50,6 @@ node Producer.js
 
 ## Tecnologías
 
-- [Apache Kafka](https://kafka.apache.org/) — Confluent Platform 7.6, modo KRaft (sin ZooKeeper)
-- [Node.js](https://nodejs.org/) + [kafkajs](https://kafka.js.org/)
-- [Python](https://www.python.org/) + [confluent-kafka](https://docs.confluent.io/kafka-clients/python/current/overview.html)
+- Apache Kafka — Confluent Platform 7.6, modo KRaft (sin ZooKeeper)
+- Node.js + kafkajs
+- Python + confluent-kafka
